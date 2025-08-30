@@ -2,7 +2,7 @@
 import { createClient, RedisClientType } from 'redis';
 
 // Types.
-import type { MessageInputParam } from './llm';
+import type { MessageInputParam } from '@derogab/llm-proxy';
 
 // Class for the data storage.
 export default class Storage {

@@ -10,12 +10,10 @@
   "author": "derogab",
   "license": "MIT",
   "dependencies": {
-    "axios": "1.7.2",
+    "@derogab/llm-proxy": "0.2.0",
     "cron": "3.1.7",
     "dotenv": "16.4.5",
     "grammy": "1.27.0",
-    "ollama": "0.5.0",
-    "openai": "4.31.0",
     "redis": "4.6.13"
   },
   "devDependencies": {

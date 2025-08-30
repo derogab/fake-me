@@ -1,6 +1,6 @@
 import { Bot } from "grammy";
 import { Context } from "grammy";
-import { generate } from '../utils/llm';
+import { generate } from '@derogab/llm-proxy';
 import Storage, * as dataUtils from "../utils/data";
 
 /**

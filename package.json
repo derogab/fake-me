@@ -17,6 +17,7 @@
     "redis": "4.6.13"
   },
   "devDependencies": {
+    "@types/node": "^24.3.0",
     "typescript": "^5.5.3"
   }
 }

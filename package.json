@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "@derogab/llm-proxy": "0.2.0",
-    "cron": "3.1.7",
+    "cron": "4.3.3",
     "dotenv": "17.2.2",
     "grammy": "1.27.0",
     "redis": "4.6.13",

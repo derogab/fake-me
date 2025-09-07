@@ -1,6 +1,8 @@
 import { Bot } from "grammy";
 import { Context } from "grammy";
 import { generate } from '@derogab/llm-proxy';
+
+import Config from "../utils/config";
 import Storage, * as dataUtils from "../utils/data";
 
 /**
@@ -52,7 +54,7 @@ export async function onMessageReceived(storage: Storage, ctx: Context) {
  * 
  * @param storage the storage instance.
  */
-export async function sendMessage(bot: Bot, storage: Storage) {
+export async function sendMessage(bot: Bot, storage: Storage, config: Config) {
   // Retrieve a chat from the queue.
   const chatId = await dataUtils.getChat(storage, 'chat-queue');
   // If no chat is available, return.
@@ -61,19 +63,15 @@ export async function sendMessage(bot: Bot, storage: Storage) {
   // Set the bot as typing.
   await bot.api.sendChatAction(chatId, 'typing').catch(() => {});
   
-  // Generate key.
-  const key = generate_key(chatId);
-  // Get history.
-  const history = await dataUtils.getHistory(storage, key);
+  // Get instructions based on the chat id.
+  const instructions = config.getInstructions(chatId)?.map(x => ({ role: 'system', content: x })) || [];
+  // Get history based on the chat id.
+  const history = await dataUtils.getHistory(storage, generate_key(chatId));
 
   // Generate a smart reply using the AI based on instructions and chat history.
   const m = await generate([
     // Instructions for the AI.
-    { role: 'system', content: "You are an AI that can pretend to be a real person, but no one has to know about it." },
-    { role: 'system', content: "You will receive messages and you will have to respond by pretending to be the recipient of the messages without getting caught." },
-    { role: 'system', content: "Do not answer with a question unless it is really necessary in the speech." },
-    { role: 'system', content: "You are not an assistant. You don't have to serve the user but just have conversation." },
-    { role: 'system', content: "It is important that you respond using the same language used by the other person." },
+    ... instructions,
     // Chat history.
     ... history
   ]);
@@ -85,5 +83,5 @@ export async function sendMessage(bot: Bot, storage: Storage) {
   // Send the message.
   await bot.api.sendMessage(chatId, m.content as string, options);
   // Update history with the response.
-  await dataUtils.updateHistory(storage, key, m);
+  await dataUtils.updateHistory(storage, generate_key(chatId), m);
 }

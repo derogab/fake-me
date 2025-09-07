@@ -35,6 +35,8 @@ services:
     image: ghcr.io/derogab/fake-me:latest
     container_name: fake-me-app
     restart: unless-stopped
+    volumes:
+      - ../config.yml:/usr/src/app/config.yml:ro
     depends_on:
       redis:
         condition: service_healthy

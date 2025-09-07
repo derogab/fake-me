@@ -129,7 +129,8 @@ export async function getChat(storage: Storage, key: string): Promise<string | n
   // Connect storage if not connected.
   await storage.connect();
   // Retrieve one chat.
-  const item = await storage.client?.sPop(key, 1);
+  const items = await storage.client?.sPop(key);
+  const item = Array.isArray(items) ? items[0] : items;
   // Return the chat.
   return item ? '' + item : null;
 }

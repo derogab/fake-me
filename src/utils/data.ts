@@ -1,8 +1,12 @@
 // Dependencies.
 import { createClient, RedisClientType } from 'redis';
+import * as dotenv from 'dotenv';
 
 // Types.
 import type { MessageInputParam } from '@derogab/llm-proxy';
+
+// Environment variables.
+dotenv.config();
 
 // Class for the data storage.
 export default class Storage {
@@ -22,7 +26,7 @@ export default class Storage {
   async connect() {
     if (this.client) return; // If the client is already connected, return.
     
-    const client = await createClient()
+    const client = await createClient({ url: process.env.REDIS_URL })
     .on('error', err => console.log('Redis Client Error', err))
     .connect();
 

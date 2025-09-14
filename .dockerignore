@@ -1,6 +1,9 @@
 ### Config ###
 config.yml
 
+### Models ###
+models/*
+
 ### Node ###
 # Logs
 logs

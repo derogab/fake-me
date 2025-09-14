@@ -37,6 +37,7 @@ services:
     restart: unless-stopped
     volumes:
       - ../config.yml:/usr/src/app/config.yml:ro
+      - ../models:/usr/src/app/models:ro
     depends_on:
       redis:
         condition: service_healthy

@@ -95,7 +95,7 @@ docker-compose -f docker/docker-compose.yml up -d # --build to build from source
 | `CLOUDFLARE_AUTH_KEY` | Cloudflare authorization key (optional, for Cloudflare AI) | - |
 | `CLOUDFLARE_MODEL` | Cloudflare model name (optional, for Cloudflare AI) | - |
 | `REDIS_URL` | URL for the Redis server (optional) | redis://localhost:6379 |
-| `TZ` | Timone | UTC |
+| `TZ` | Timezone | UTC |
 
 ### Chat Configuration (`config.yml`)
 

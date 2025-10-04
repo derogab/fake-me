@@ -10,7 +10,7 @@
   "author": "derogab",
   "license": "MIT",
   "dependencies": {
-    "@derogab/llm-proxy": "0.3.2",
+    "@derogab/llm-proxy": "0.3.3",
     "cron": "4.3.3",
     "dotenv": "17.2.2",
     "grammy": "1.27.0",

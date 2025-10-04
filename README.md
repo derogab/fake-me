@@ -28,7 +28,7 @@ This bot monitors your Telegram business messages and responds automatically by 
 - Node.js
 - Redis server
 - Telegram Bot Token (from [@BotFather](https://t.me/botfather))
-- LLM service (OpenAI, Cloudflare AI, Ollama or OpenAI Compatible API)
+- LLM service (OpenAI, Cloudflare AI, Ollama, Llama.cpp  or OpenAI Compatible API)
 
 ## Installation
 
@@ -94,6 +94,7 @@ docker-compose -f docker/docker-compose.yml up -d # --build to build from source
 | `CLOUDFLARE_ACCOUNT_ID` | Cloudflare account ID (optional, for Cloudflare AI) | - |
 | `CLOUDFLARE_AUTH_KEY` | Cloudflare authorization key (optional, for Cloudflare AI) | - |
 | `CLOUDFLARE_MODEL` | Cloudflare model name (optional, for Cloudflare AI) | - |
+| `LLAMA_CPP_MODEL_PATH` | Path to GGUF model file (optional, for Llama.cpp integration) | - |
 | `REDIS_URL` | URL for the Redis server (optional) | redis://localhost:6379 |
 | `TZ` | Timezone | UTC |
 

@@ -13,7 +13,7 @@
     "@derogab/llm-proxy": "0.3.3",
     "cron": "4.3.3",
     "dotenv": "17.2.3",
-    "grammy": "1.27.0",
+    "grammy": "1.38.3",
     "redis": "5.8.2",
     "yaml": "2.8.1"
   },

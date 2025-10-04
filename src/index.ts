@@ -27,11 +27,11 @@ const msgJob = CronJob.from({
   cronTime: '*/7 * * * *',
   onTick: async () => { await sendMessage(bot, storage, config); },
   start: true,
-  timeZone: process.env.TZ || 'UTC'
+  timeZone: process.env.TZ || 'UTC',
 });
 
 // Start bot.
-bot.start({ allowed_updates: ["business_message"] })
+bot.start({ allowed_updates: ["business_message"] });
 
 // Enable graceful stop.
 process.once('SIGINT', () => { bot.stop(); });

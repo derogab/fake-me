@@ -14,7 +14,7 @@
     "cron": "4.3.5",
     "dotenv": "17.2.3",
     "grammy": "1.38.4",
-    "redis": "5.9.0",
+    "redis": "5.10.0",
     "yaml": "2.8.1"
   },
   "devDependencies": {

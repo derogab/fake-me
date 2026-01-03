@@ -15,7 +15,7 @@
     "dotenv": "17.2.3",
     "grammy": "1.38.4",
     "redis": "5.9.0",
-    "yaml": "2.8.1"
+    "yaml": "2.8.2"
   },
   "devDependencies": {
     "@types/node": "^25.0.3",

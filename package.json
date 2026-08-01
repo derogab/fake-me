@@ -10,11 +10,11 @@
   "author": "derogab",
   "license": "MIT",
   "dependencies": {
-    "@derogab/llm-proxy": "0.3.3",
+    "@derogab/llm-proxy": "0.4.4",
     "cron": "4.4.0",
-    "dotenv": "17.2.3",
-    "grammy": "1.44.0",
-    "redis": "5.9.0",
+    "dotenv": "17.4.2",
+    "grammy": "1.45.1",
+    "redis": "5.12.1",
     "yaml": "2.9.0"
   },
   "devDependencies": {
